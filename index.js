@@ -11,6 +11,7 @@ app.use(express.json());
 app.use('/api/usuario', user)
 
 
+
 //Levantamos el web service
 app.listen(port, () => {
     console.log(`Escuchando en el puerto ${port}`);

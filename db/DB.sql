@@ -29,3 +29,5 @@ CREATE TABLE tbl_comentario(
     activo bool DEFAULT true
 )
 
+SELECT * from tbl_usuarios
+
