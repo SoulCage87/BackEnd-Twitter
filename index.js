@@ -1,5 +1,7 @@
 import express from 'express'
 import { user } from './routes/routeUser.js';
+import { publicacion } from './routes/routePublicaciones.js';
+import { comentario } from './routes/routeComentario.js';
 const app = express();
 const port = 4000;
 
@@ -9,6 +11,8 @@ const port = 4000;
 app.use(express.json());
 
 app.use('/api/usuario', user)
+app.use('/api/publicacion', publicacion)
+app.use('/api/comentario',comentario)
 
 
 

@@ -29,5 +29,19 @@ CREATE TABLE tbl_comentario(
     activo bool DEFAULT true
 )
 
-SELECT * from tbl_usuarios
+SELECT * from tbl_publicaciones
+
+INSERT INTO tbl_comentario
+(comentario,publicacion_id,usuario)
+VALUES
+('coincido muy buen publicacion',2, 'C0ND3N4S' )
+
+SELECT *
+FROM tbl_comentario
+
+ SELECT usuario, comentario
+            FROM tbl_comentario
+            WHERE publicacion_id = 2
+
+ 
 
