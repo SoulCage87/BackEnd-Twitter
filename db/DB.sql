@@ -39,9 +39,10 @@ VALUES
 SELECT *
 FROM tbl_comentario
 
- SELECT usuario, comentario
+  SELECT usuario, comentario
             FROM tbl_comentario
-            WHERE publicacion_id = 2
+            WHERE publicacion_id = 2 AND activo = true
+            
 
  
 

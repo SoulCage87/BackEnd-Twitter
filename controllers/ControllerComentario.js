@@ -2,18 +2,19 @@ import { db } from "../db/conn.js";
 
 const getComentario = async (req, res) => {
     try {
-        const publicacion_id = req.params.publicacion_id;
-
-        const sql = `
+        const { id_publicacion } = req.params;
+        const publicacion_id = id_publicacion;
+         
+       const sql = `
             SELECT usuario, comentario
             FROM tbl_comentario
-            WHERE publicacion_id = $1
+            WHERE publicacion_id = $1 AND activo = true
         `;
 
-        const result = await db.query(sql, [publicacion_id]);
-        res.json(result.rows);
+        const result = await (db.query(sql, [publicacion_id]));
+        res.json(result);
     } catch (e) {
-        res.status(500).json(e.message);
+        res.status(500).json(e.message); 
     }
 };
 
