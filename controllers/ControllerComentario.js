@@ -9,7 +9,7 @@ const getComentario = async (req, res) => {
         console.log(req.body)
          
        const sql = `
-            SELECT usuario, comentario, id
+            SELECT usuario, comentario, id,fecha_comentario
             FROM tbl_comentario
             WHERE publicacion_id = $1 AND activo = true
         `;
