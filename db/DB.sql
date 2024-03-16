@@ -39,14 +39,19 @@ SELECT * from tbl_comentario
 INSERT INTO tbl_comentario
 (comentario,publicacion_id,usuario)
 VALUES
-('coincido muy buen publicacion',2, 'C0ND3N4S' )
+('coincido muy buen publicacion',12, 'C0ND3N4S' )
 
 SELECT *
 FROM tbl_comentario
 
-  SELECT usuario, comentario
+  SELECT usuario, comentario, id
             FROM tbl_comentario
-            WHERE publicacion_id = 2 AND activo = true
+            WHERE publicacion_id = 13 AND activo = true
+
+            INSERT INTO tbl_comentario
+        (comentario,publicacion_id,usuario)
+        VALUES
+        ('Muy bueno',12,C0ND3N4S) RETURNING comentario, publicacion_id
             
 
  

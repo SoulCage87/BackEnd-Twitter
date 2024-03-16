@@ -4,7 +4,7 @@ import { postComentario, deleteComentario, getComentario } from '../controllers/
 
 comentario.use(express.json())
 
-comentario.post('/:id_publicacion/:nombre_usuario', postComentario);
+comentario.post('/:id_publicacion', postComentario);
 comentario.delete('/:id', deleteComentario);
 comentario.get('/:id_publicacion', getComentario);
 

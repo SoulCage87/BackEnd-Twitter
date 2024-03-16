@@ -4,9 +4,12 @@ const getComentario = async (req, res) => {
     try {
         const { id_publicacion } = req.params;
         const publicacion_id = id_publicacion;
+
+        console.log(req)
+        console.log(req.body)
          
        const sql = `
-            SELECT usuario, comentario
+            SELECT usuario, comentario, id
             FROM tbl_comentario
             WHERE publicacion_id = $1 AND activo = true
         `;
@@ -42,6 +45,11 @@ const postComentario = async (req, res) => {
         const { id_publicacion, nombre_usuario } = req.params 
 
         const { comentario } = req.body
+
+        console.log(req)
+        console.log(req.body)
+
+        
 
         const params = [comentario, id_publicacion, nombre_usuario]
 
