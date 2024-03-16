@@ -32,6 +32,10 @@ const postUsuario = async (req, res) => {
          apellido,
          confirmacion_con } = req.body;
 
+         console.log(req)
+         console.log(req.body)
+
+
       const params = [nombre_usuario,
          correo_electronico,
          contrasena,

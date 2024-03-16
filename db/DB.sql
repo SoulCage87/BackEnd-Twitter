@@ -31,6 +31,11 @@ CREATE TABLE tbl_comentario(
 
 SELECT * from tbl_publicaciones
 
+SELECT * from tbl_usuarios
+
+SELECT * from tbl_comentario
+
+
 INSERT INTO tbl_comentario
 (comentario,publicacion_id,usuario)
 VALUES

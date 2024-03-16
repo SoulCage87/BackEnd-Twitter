@@ -32,6 +32,10 @@ const postPublicacion = async (req, res) => {
         const { caption,
             nombre_usuario } = req.body
 
+            console.log(req)
+            console.log(req.body)
+            console.log(req.file)
+
         const { buffer, mimetype, originalname } = req.file;
 
         const params = [buffer, mimetype, originalname, caption, nombre_usuario];
