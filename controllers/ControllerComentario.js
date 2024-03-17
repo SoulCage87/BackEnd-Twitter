@@ -5,11 +5,10 @@ const getComentario = async (req, res) => {
         const { id_publicacion } = req.params;
         const publicacion_id = id_publicacion;
 
-        console.log(req)
-        console.log(req.body)
+        
          
        const sql = `
-            SELECT usuario, comentario, id,fecha_comentario
+            SELECT nombre_usuario, comentario, id,fecha_comentario
             FROM tbl_comentario
             WHERE publicacion_id = $1 AND activo = true
         `;
@@ -42,9 +41,9 @@ const deleteComentario = async (req, res) => {
 
 const postComentario = async (req, res) => {
     try {
-        const { id_publicacion, nombre_usuario } = req.params 
+        const { id_publicacion } = req.params 
 
-        const { comentario } = req.body
+        const { comentario, nombre_usuario } = req.body
 
         console.log(req)
         console.log(req.body)
@@ -54,7 +53,7 @@ const postComentario = async (req, res) => {
         const params = [comentario, id_publicacion, nombre_usuario]
 
         const sql = `INSERT INTO tbl_comentario
-        (comentario,publicacion_id,usuario)
+        (comentario,publicacion_id,nombre_usuario)
         VALUES
         ($1,$2,$3) RETURNING comentario, publicacion_id`
 

@@ -24,16 +24,18 @@ CREATE TABLE tbl_comentario(
     id SERIAL PRIMARY KEY,
     comentario VARCHAR(200),
     publicacion_id INT REFERENCES tbl_publicaciones(id),
-    usuario VARCHAR(30) REFERENCES tbl_usuarios(nombre_usuario),
+    nombre_usuario VARCHAR(30) REFERENCES tbl_usuarios(nombre_usuario),
     fecha_comentario TIMESTAMP DEFAULT current_timestamp,
     activo bool DEFAULT true
 )
+
+DROP TABLE tbl_comentario
 
 SELECT * from tbl_publicaciones
 
 SELECT * from tbl_usuarios
 
-SELECT * from tbl_comentario
+SELECT * from tbl_comentario WHERE publicacion_id = 20
 
 
 INSERT INTO tbl_comentario

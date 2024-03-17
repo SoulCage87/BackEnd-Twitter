@@ -82,7 +82,8 @@ const getPublicacion = async (req, res) => {
                      caption, 
                      nombre_usuario,
                      mime_type, 
-                     encode(imagen, 'base64') imagen  
+                     encode(imagen, 'base64') imagen,
+                     fecha_post  
                      FROM tbl_publicaciones 
                      WHERE activo = true
                      ORDER BY fecha_post DESC`
